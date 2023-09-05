@@ -1,0 +1,50 @@
+.todo-modal {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: -100%;
+	background-color: #FFFFFF;
+	pointer-events: none;
+	z-index: -1;
+	transition: all .5s;
+}
+
+.todo-modal__button {
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 6rem;
+	height: 6rem;
+	margin: -3rem auto 1.6rem;
+	background: linear-gradient(
+		to right,
+		#F857C3,
+		#E0139C
+	);
+	border-radius: 50%;
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+.todo-modal__button svg {
+	width: 2.4rem;
+	height: 2.4rem;
+	transition: transform .5s;
+}
+
+.todo-modal[data-show='true'] {
+	top: -60vh;
+	padding: 0 2rem 2rem;
+	box-shadow: 0 -6px 12px rgba(10, 10, 10, .1);
+	border-radius: 32rem/6rem;
+	z-index: 999;
+	pointer-events: auto;
+}
+
+.todo-modal[data-show='true'] .todo-modal__button svg {
+	transform: rotate(-45deg);
+}

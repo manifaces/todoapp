@@ -14,7 +14,7 @@ function AppToDo() {
       <Routes>
         <Route path="/" element={<ToDoLayout />}>
           <Route index element={<Homepage />} />
-          <Route path="task" element={<Taskpage />} />
+          <Route path="/task" element={<Taskpage />} />
         </Route>
       </Routes>
     </Provider>

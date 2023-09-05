@@ -1,0 +1,60 @@
+.todo-form {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.todo-form:not([data-show]) > *:not(:first-child) {
+	display: none;
+}
+
+.todo-form[data-show='false'] > *:not(:first-child) {
+	animation: hide .5s forwards;
+}
+
+.todo-form__input {
+	padding: 1.6rem 0;
+	margin-bottom: 2rem;
+	margin-top: 1rem;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid #CFCFCF;
+	color: #000000;
+	font-family: 'Rubik', sans-serif;
+	font-size: 2rem;
+}	
+
+.todo-form__text {
+	font-size: 1.4rem;
+	font-weight: 500;
+	color: #404040;
+	text-align: center;
+}
+
+.todo-form__btn {
+	padding: 1.6rem;
+	background: linear-gradient(
+		to left,
+		#7EB6FF,
+		#5F87E7
+	);
+	box-shadow: 0px 3px 6px #6894EE;
+	color: #FFFFFF;
+	font-family: 'Rubik', sans-serif;
+	font-size: 1.8rem;
+	font-weight: 500;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+@keyframes hide {
+  from { 
+		visibility: visible;
+	}
+  to { 
+		visibility: hidden;
+		clip: rect(1px 1px 1px 1px);
+	}
+}

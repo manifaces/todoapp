@@ -1,5 +1,16 @@
 .todo-list {
 	display: flex;
 	flex-direction: column;
+	min-height: 300px;
 	padding-bottom: 2rem;
+	&__error {
+		position: absolute;
+    top: calc(30% + 100px);
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    font-size: clamp(5rem, 10vw, 8rem);
+    text-align: center;
+    color: #554E8F;
+	}
 }

@@ -43,6 +43,7 @@ const data: DataType[] = [
 export type StateType = {
   items: DataType[];
   categories: string[];
+  activeFilter: 'all' | 'active' | 'completed';
   reminder: {
       items: React.ReactNode[];
       isVisible: boolean;
@@ -52,6 +53,7 @@ export type StateType = {
 const initialState: StateType = { 
   items: data,
   categories: Array.from(new Set(data.map(item => item.category))),
+  activeFilter: 'all',
   reminder: { items: [], isVisible: true }
 };
 
@@ -111,10 +113,19 @@ const todoSlice = createSlice({
     },
     updateItems(state, action) {
       state.items = action.payload;
+    },
+    filterItems(state, action) {
+      if (action.payload === 'completed') {
+        state.activeFilter = 'completed';
+      } else if (action.payload === 'active') {
+        state.activeFilter = 'active';
+      } else {
+        state.activeFilter = 'all';
+      }
     }
   },
 });
 
-export const { addItem, removeItem, addCompletedItem, closeReminder, changeReminder, updateItems } = todoSlice.actions;
+export const { addItem, removeItem, addCompletedItem, closeReminder, changeReminder, updateItems, filterItems } = todoSlice.actions;
 
 export default todoSlice.reducer;

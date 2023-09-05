@@ -1,0 +1,32 @@
+.task-item {
+  position: relative;
+  box-shadow: 0px 4px 9px rgba(10, 10, 10, .1);
+  border-radius: 1.2rem;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 5rem 4.8rem;
+  }
+  &__image {
+    min-width: 5.4rem;
+    width: 100%;
+    max-width: 8rem;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #686868;
+  }
+  &__amount {
+    font-size: 1.4rem;
+    color: #A1A1A1;
+  }
+}

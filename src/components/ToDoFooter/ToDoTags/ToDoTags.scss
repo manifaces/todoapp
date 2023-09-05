@@ -1,0 +1,78 @@
+.todo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  margin: 0 auto 2rem;
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: .6rem 1rem;
+    cursor: pointer;
+    &[data-category="personal"] {
+      --radio-bg: #FFD506;
+    }
+    &[data-category="work"] {
+      --radio-bg: #5DE61A;
+    }
+    &[data-category="meeting"] {
+      --radio-bg: #D10263;
+    }
+    &[data-category="study"] {
+      --radio-bg: #3044F2;
+    }
+  }
+  &__radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    opacity: 0;
+    & ~ .todo-tags__plug {
+      position: relative;
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-right: .4rem;
+      border: 2px solid var(--radio-bg);
+      border-radius: 50%;
+      background-color: var(--radio-bg);
+    }
+    &:checked ~ .todo-tags__plug {
+      opacity: 0;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+    &:checked + label {
+      background-color: var(--radio-bg);
+      border-radius: .4rem;
+    }
+    &:checked ~ .todo-tags__text {
+      color: #FFFFFF;
+      z-index: 100;
+    }
+  }
+  &__text {
+    font-size: 1.6rem;
+    color: #8E8E8E;
+    text-transform: capitalize;
+  }
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+  }
+  &__plug {
+    pointer-events: none;
+  }
+}
