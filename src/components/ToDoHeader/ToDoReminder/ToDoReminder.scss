@@ -1,0 +1,60 @@
+.todo-reminder {
+  flex: 1 0 100%;
+  position: relative;
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem;
+  margin: 2rem auto 0;
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: .6rem;
+	&[data-show="false"] {
+		display: none;
+	}
+  svg {
+		width: auto;
+		height: auto;
+    margin-right: 1rem;
+  }
+  &__title {
+    margin-bottom: .2rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  &__description {
+    margin-bottom: .2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+  }
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: .5rem;
+      left: 0;
+      width: .2rem;
+      height: 100%;
+      background-color: #fff;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  &__wtf {
+    position: absolute;
+    bottom: .5rem;
+    left: 1.5rem;
+    font-size: .9rem;
+  }
+}
