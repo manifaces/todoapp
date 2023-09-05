@@ -1,12 +1,12 @@
 .todo-content {
 	position: relative;
 	flex: 1;
-	padding: 1.6rem 1.6rem 0;
+	padding: 3rem 1.6rem 0;
 	background-color: #F9FCFF;
 	overflow-y: auto;
 	overflow-x: hidden;
   @media (min-width: 420px) {
-    padding: 1.6rem 2rem 0;
+    padding: 3rem 3rem 0;
   }
   &__title {
     margin-bottom: 2.4rem;

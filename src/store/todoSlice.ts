@@ -9,7 +9,7 @@ export type DataType = {
   category: string;
 }
 
-const data: DataType[] = [
+export const data: DataType[] = [
   {
     id: uuidv4(),
     content: 'Go jogging with Christin',

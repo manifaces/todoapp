@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 
-import { RootState } from '../../../store';
+import { amountItemsSelector } from '../../../store/selectors';
 import './ToDoWelcome.scss';
 
 export const ToDoWelcome = () => {
-  const amountItems = useSelector((state: RootState) => state.todos.items.length);
+  const amountItems = useSelector(amountItemsSelector);
   return (
     <>
       <div className="todo-welcome">

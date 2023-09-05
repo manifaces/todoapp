@@ -1,14 +1,15 @@
 import { useSelector } from 'react-redux';
 
-import { RootState } from '../../store';
+import { itemsSelector } from '../../store/selectors';
+import { tagsSelector } from '../../store/selectors';
 
 import { TaskItem } from './TaskItem/TaskItem';
 import './TaskList.scss';
 
 
 export const TaskList = () => {
-  const items = useSelector((state: RootState) => state.todos.items);
-  const tags = useSelector((state: RootState) => state.todos.categories);
+  const items = useSelector(itemsSelector);
+  const tags = useSelector(tagsSelector);
   return (
     <ul className="task-list">
       {tags.map((tag, i) => {

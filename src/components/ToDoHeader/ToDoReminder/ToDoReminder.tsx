@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 
-import { RootState } from '../../../store';
+import { reminderSelector } from '../../../store/selectors';
 import { closeReminder } from '../../../store/todoSlice';
 
 import './ToDoReminder.scss';
 
 export const ToDoReminder = () => {
-  const reminder = useSelector((state: RootState) => state.todos.reminder);
+  const reminder = useSelector(reminderSelector);
   const dispatch = useDispatch(); 
   return (
     <div className="todo-reminder" data-show={reminder.isVisible ? 'true' : 'false'} >

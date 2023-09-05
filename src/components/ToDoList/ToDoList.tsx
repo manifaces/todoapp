@@ -1,22 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 
-import { RootState } from '../../store';
+import { filteritemsSelector } from '../../store/selectors';
 import { updateItems } from '../../store/todoSlice';
 
 import { ToDoItem } from './ToDoItem/ToDoItem';
 import './ToDoList.scss';
 
 export const ToDoList = () => {
-  const items = useSelector((state: RootState) => {
-    if (state.todos.activeFilter === 'completed') {
-      return state.todos.items.filter(item => item.completed === true);
-    } else if (state.todos.activeFilter === 'active') {
-      return state.todos.items.filter(item => item.completed === false);
-    } else {
-      return state.todos.items;
-    }
-  });
+  const items = useSelector(filteritemsSelector);
   const dispatch = useDispatch();
   
   const handleOnDragEnd = (result: DropResult) => {

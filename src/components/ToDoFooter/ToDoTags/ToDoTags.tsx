@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { RootState } from '../../../store';
+import { tagsSelector } from '../../../store/selectors';
 import './ToDoTags.scss';
 
 export type ToDoTagsProps = {
@@ -9,7 +9,7 @@ export type ToDoTagsProps = {
 }
 
 export const ToDoTags: React.FC<ToDoTagsProps> = ({ setCategory, radioButtons }) => {
-  const tags = useSelector((state: RootState) => state.todos.categories);
+  const tags = useSelector(tagsSelector);
   return (
     <div className="todo-tags">
       {tags.map((tag, i) =>
