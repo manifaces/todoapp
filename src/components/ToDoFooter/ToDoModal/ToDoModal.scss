@@ -9,7 +9,8 @@
 	background-color: #FFFFFF;
 	pointer-events: none;
 	z-index: -1;
-	transition: all .5s;
+	will-change: top, border-radius, padding, box-shadow, z-index;
+	transition: top .5s, border-radius .5s, padding .5s, box-shadow .5s, z-index .5s;
 }
 
 .todo-modal__button {
